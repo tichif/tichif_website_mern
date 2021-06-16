@@ -1,0 +1,35 @@
+.services {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.services .service {
+  padding: 30px;
+}
+
+.services .service .icon i {
+  font-size: 80px;
+  color: var(--secondary-color);
+}
+
+.services .service h2 {
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1068px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
