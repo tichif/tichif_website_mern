@@ -1,9 +1,21 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import './Navigation.css';
+import github from '../images/github.png';
+import twitter from '../images/twitter.png';
+import instagram from '../images/instagram.png';
+import french from '../images/french.png';
+import usa from '../images/usa.png';
 
 const Navigation = () => {
+  const dispatch = useDispatch();
+
+  const navigation = useSelector((state) => state.navigation);
+  const { active } = navigation;
+
   return (
-    <div className='navigation'>
+    <div className={`navigation${active ? ' active' : ''}`}>
       <ul>
         <li>
           <a href='./index.html'>Accueil</a>
@@ -26,7 +38,7 @@ const Navigation = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <img src='./images/github.png' alt='github' />
+              <img src={github} alt='github' />
             </a>
           </li>
           <li>
@@ -35,7 +47,7 @@ const Navigation = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <img src='./images/twitter.png' alt='twitter' />
+              <img src={twitter} alt='twitter' />
             </a>
           </li>
           <li>
@@ -44,16 +56,16 @@ const Navigation = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <img src='./images/instagram.png' alt='instagram' />
+              <img src={instagram} alt='instagram' />
             </a>
           </li>
         </ul>
         <ul className='lang-icon'>
           <li>
-            <img src='./images/french.png' alt='french' />
+            <img src={french} alt='french' />
           </li>
           <li>
-            <img src='./images/usa.png' alt='french' />
+            <img src={usa} alt='french' />
           </li>
         </ul>
       </div>
