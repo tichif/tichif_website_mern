@@ -1,0 +1,28 @@
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  z-index: 20;
+}
+
+.toggle {
+  border: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color) url('../images/menu.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: var(--primary-color) url('../images/close.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+}

@@ -55,10 +55,3 @@ section.home {
 .btn:hover {
   transform: scale(0.98);
 }
-
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 100px;
-  z-index: 20;
-}
