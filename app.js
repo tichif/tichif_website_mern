@@ -6,6 +6,7 @@ const xss = require('xss-clean');
 
 const errorHandler = require('./middleware/error');
 const ErrorResponse = require('./utils/ErrorResponse');
+const contactRoutes = require('./routes/contact');
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(hpp());
 app.use(xss());
+
+app.use('/api/v1/contact', contactRoutes);
 
 app.use(errorHandler);
 
