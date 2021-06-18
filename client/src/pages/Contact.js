@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './Contact.css';
 import Meta from '../components/Meta';
@@ -16,8 +17,33 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
+  const dispatch = useDispatch();
+
+  const contactState = useSelector((state) => state.contact);
+  const { loading, success, error } = contactState;
+
   const submitHandler = (e) => {
     e.preventDefault();
+    if (
+      firstName !== '' ||
+      lastName !== '' ||
+      emailInput !== '' ||
+      message !== ''
+    ) {
+      dispatch(
+        contact({
+          name: `${firstName} ${lastName}`,
+          email: emailInput,
+          subject: subject || 'Un message de votre site',
+          message,
+        })
+      );
+      setFirstName('');
+      setLastName('');
+      setEmailInput('');
+      setSubject('');
+      setMessage('');
+    }
   };
 
   return (
@@ -35,60 +61,81 @@ const Contact = () => {
           </p>
         </div>
         <div className='contact'>
-          <div className='contact-form'>
-            <form onSubmit={submitHandler}>
-              <div className='row'>
-                <div className='input50'>
-                  <input
-                    type='text'
-                    placeholder='Prénom'
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
+          {loading ? (
+            <Spinner />
+          ) : (
+            <div className='contact-form'>
+              <form onSubmit={submitHandler}>
+                <div className='row'>
+                  <div className='input50'>
+                    <input
+                      type='text'
+                      placeholder='Prénom'
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                    />
+                  </div>
+                  <div className='input50'>
+                    <input
+                      type='text'
+                      placeholder='Nom'
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                    />
+                  </div>
                 </div>
-                <div className='input50'>
-                  <input
-                    type='text'
-                    placeholder='Nom'
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
+                <div className='row'>
+                  <div className='input50'>
+                    <input
+                      type='email'
+                      placeholder='Email'
+                      value={emailInput}
+                      onChange={(e) => setEmailInput(e.target.value)}
+                    />
+                  </div>
+                  <div className='input50'>
+                    <input
+                      type='text'
+                      placeholder='Sujet'
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className='row'>
-                <div className='input50'>
-                  <input
-                    type='email'
-                    placeholder='Email'
-                    value={emailInput}
-                    onChange={(e) => setEmailInput(e.target.value)}
-                  />
+                <div className='row'>
+                  <div className='input100'>
+                    <textarea
+                      placeholder='Message'
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </div>
                 </div>
-                <div className='input50'>
-                  <input
-                    type='text'
-                    placeholder='Sujet'
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                  />
+                <div className='row'>
+                  <div className='input100'>
+                    <button type='submit'>Envoyer</button>
+                  </div>
                 </div>
-              </div>
-              <div className='row'>
-                <div className='input100'>
-                  <textarea
-                    placeholder='Message'
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className='row'>
-                <div className='input100'>
-                  <button type='submit'>Envoyer</button>
-                </div>
-              </div>
-            </form>
-          </div>
+                {error && (
+                  <div className='row'>
+                    <div className='input100'>
+                      <Alert type='error' message={error[0].msg} />
+                    </div>
+                  </div>
+                )}
+                {success && (
+                  <div className='row'>
+                    <div className='input100'>
+                      <Alert
+                        type='success'
+                        message="Merci de m'avoir contacté !!!"
+                      />
+                    </div>
+                  </div>
+                )}
+              </form>
+            </div>
+          )}
           <div className='contact-info'>
             <div className='info-box'>
               <img src={address} alt='Address' className='contact-icon' />

@@ -2,8 +2,8 @@ import React from 'react';
 
 import './Alert.css';
 
-const Alert = ({ type }) => (
-  <p class={`alert ${type}`}>Merci de m'avoir contacté !!1</p>
+const Alert = ({ type, message }) => (
+  <p className={`alert ${type}`}>{message}</p>
 );
 
 export default Alert;
