@@ -1,12 +1,25 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import './Contact.css';
 import Meta from '../components/Meta';
 import address from '../images/address.png';
 import email from '../images/email.png';
 import telephone from '../images/call.png';
+import Spinner from '../components/Spinner';
+import Alert from '../components/Alert';
+import { contact } from '../actions/contactAction';
 
 const Contact = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Fragment>
       <Meta title='Contactez-moi' />
@@ -23,26 +36,50 @@ const Contact = () => {
         </div>
         <div className='contact'>
           <div className='contact-form'>
-            <form>
+            <form onSubmit={submitHandler}>
               <div className='row'>
                 <div className='input50'>
-                  <input type='text' placeholder='Prénom' />
+                  <input
+                    type='text'
+                    placeholder='Prénom'
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
                 </div>
                 <div className='input50'>
-                  <input type='text' placeholder='Nom' />
+                  <input
+                    type='text'
+                    placeholder='Nom'
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
                 </div>
               </div>
               <div className='row'>
                 <div className='input50'>
-                  <input type='email' placeholder='Email' />
+                  <input
+                    type='email'
+                    placeholder='Email'
+                    value={emailInput}
+                    onChange={(e) => setEmailInput(e.target.value)}
+                  />
                 </div>
                 <div className='input50'>
-                  <input type='text' placeholder='Sujet' />
+                  <input
+                    type='text'
+                    placeholder='Sujet'
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                  />
                 </div>
               </div>
               <div className='row'>
                 <div className='input100'>
-                  <textarea placeholder='Message'></textarea>
+                  <textarea
+                    placeholder='Message'
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
                 </div>
               </div>
               <div className='row'>

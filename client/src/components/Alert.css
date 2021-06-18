@@ -1,0 +1,14 @@
+.alert {
+  width: 100%;
+  background-color: #f15f24;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.alert.success {
+  background-color: green;
+}
+
+.alert.success {
+  background-color: red;
+}
