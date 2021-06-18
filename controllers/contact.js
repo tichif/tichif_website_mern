@@ -5,14 +5,26 @@ const sendMail = require('../utils/sendMail');
 const asyncHandler = require('../middleware/asyncHandler');
 
 exports.contact = asyncHandler(async (req, res, next) => {
-  const errors = validationResult(req);
+  const { name, email, subject, message } = req.body;
 
-  if (!errors.isEmpty) {
-    return res.status(422).json({
-      success: false,
-      errors: errors.array(),
-    });
-  }
+  const options = {
+    subject,
+    message: `
+    <html>
+      <body>
+        <p>Hello Tichif,</p>
+        <p>Je suis ${name}, adresse mail: <a href="mailto:${email}">${email}</a></p>
+        <p>J'écris au sujet de: ${subject}</p>
+        <p>${message}</p>
+      </body>
+    </html>
+    `,
+  };
 
-  console.log(req.body);
+  await sendMail(options);
+
+  return res.status(200).json({
+    success: true,
+    message: "Merci de m'avoir contacté.",
+  });
 });
