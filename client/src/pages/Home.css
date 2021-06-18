@@ -19,6 +19,10 @@
   border: none;
 }
 
+.home-content button:hover {
+  background: #111;
+}
+
 .home-content small {
   margin-top: 0;
   font-style: italic;
