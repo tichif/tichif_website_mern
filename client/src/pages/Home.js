@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Suspense fallback='loading'>
       <Fragment>
-        <Meta title='Accueil' />
+        <Meta title={t('home.title')} />
         <section className='home'>
           <img src={homeP} alt='tichif' className='home-image' />
           <div className='home-content'>

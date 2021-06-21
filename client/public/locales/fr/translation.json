@@ -17,6 +17,12 @@
     "firstname" : "Prénom",
     "lastname": "Nom",
     "subject": "Subject",
-    "title" : "Contactez moi"
+    "title" : "Contactez moi",
+    "button" : "Envoyer"
+  },
+  "work": {
+    "text" : "En utilisant les meilleurs technologies possibles, ma priorité est de satisfaire complètement mes clients en abordant chaque projet avec professionalisme, dévouement. Cliquez sur le projet en question pour avoir une idée globale sur celui-ci.",
+    "button" : "Visiter",
+    "title": "Certains de mes meilleurs travaux"
   }
 }

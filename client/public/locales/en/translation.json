@@ -17,6 +17,12 @@
     "firstname" : "Firstname",
     "lastname": "Lastname",
     "subject": "Subject",
-    "title" : "Contact me"
+    "title" : "Contact me",
+    "button" : "Send"
+  },
+  "work": {
+    "text" : "Using the best possible technologies, my priority is to completely satisfy my clients by approaching each project with professionalism, dedication. Click on each project in to get an overall idea of it.",
+    "button" : "Visit",
+    "title": "Some of my best work"
   }
 }

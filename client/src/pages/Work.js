@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Work.css';
 import Meta from '../components/Meta';
@@ -10,6 +11,8 @@ import contactKeeper from '../images/contact-keeper.png';
 import githubFinder from '../images/github-finder.png';
 
 const Work = () => {
+  const [t, i18n] = useTranslation();
+
   const works = [
     {
       name: 'TK Boutique',
@@ -36,24 +39,14 @@ const Work = () => {
       image: contactKeeper,
       link: 'https://greve-choucroute-70628.herokuapp.com/',
     },
-    {
-      name: 'Github Finder',
-      image: githubFinder,
-      link: 'https://githubfinder57895.netlify.app/',
-    },
   ];
   return (
     <Fragment>
       <Meta title='Portfolio' />
       <section>
         <div className='title'>
-          <h1>Certains de mes meilleurs travaux</h1>
-          <p>
-            En utilisant les meilleures technologies possibles, ma priorité est
-            de satisfaire complètement mes clients en abordant chaque projet
-            avec professionalisme, dévouement. cliquez sur le projet en question
-            pour avoir une idée globale sur celui-ci.{' '}
-          </p>
+          <h1>{t('work.title')}</h1>
+          <p>{t('work.text')}</p>
         </div>
 
         <div className='portfolio'>
@@ -62,7 +55,7 @@ const Work = () => {
               <img src={item.image} alt={item.name} />
               <div className='action'>
                 <a href={item.link} target='_blank' rel='noopener noreferrer'>
-                  Visiter
+                  {t('work.button')}
                 </a>
               </div>
             </div>

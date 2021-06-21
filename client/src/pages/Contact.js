@@ -109,7 +109,7 @@ const Contact = () => {
                 </div>
                 <div className='row'>
                   <div className='input100'>
-                    <button type='submit'>Envoyer</button>
+                    <button type='submit'>{t('contact.button')}</button>
                   </div>
                 </div>
                 {error && (
