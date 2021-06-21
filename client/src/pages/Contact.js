@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import './Contact.css';
 import Meta from '../components/Meta';
@@ -18,6 +19,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
 
   const contactState = useSelector((state) => state.contact);
   const { loading, success, error } = contactState;
@@ -48,17 +50,11 @@ const Contact = () => {
 
   return (
     <Fragment>
-      <Meta title='Contactez-moi' />
+      <Meta title={t('contact.title')} />
       <section>
         <div className='title'>
-          <h1>Contactez moi</h1>
-          <p>
-            Ecrivez moi pour avoir plus d'informations sur les services que
-            j'offre, pour prendre rendez-vous, ou tout simplement pour me dire
-            bonjour <span role='img'>😉</span>
-            <span role='img'>🙂</span>
-            <span role='img'>🙋🏾‍♂️</span>.
-          </p>
+          <h1>{t('contact.title')}</h1>
+          <p>{t('contact.text')}</p>
         </div>
         <div className='contact'>
           {loading ? (
@@ -70,7 +66,7 @@ const Contact = () => {
                   <div className='input50'>
                     <input
                       type='text'
-                      placeholder='Prénom'
+                      placeholder={t('contact.firstname')}
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                     />
@@ -78,7 +74,7 @@ const Contact = () => {
                   <div className='input50'>
                     <input
                       type='text'
-                      placeholder='Nom'
+                      placeholder={t('contact.lastname')}
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                     />
@@ -96,7 +92,7 @@ const Contact = () => {
                   <div className='input50'>
                     <input
                       type='text'
-                      placeholder='Sujet'
+                      placeholder={t('contact.subject')}
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
                     />
@@ -140,7 +136,7 @@ const Contact = () => {
             <div className='info-box'>
               <img src={address} alt='Address' className='contact-icon' />
               <div className='details'>
-                <h4>Adresse</h4>
+                <h4>{t('contact.address')}</h4>
                 <p>35, rue Chavannes Prol. Pétion-Ville, Haïti</p>
               </div>
             </div>
@@ -160,7 +156,7 @@ const Contact = () => {
             <div className='info-box'>
               <img src={telephone} alt='Call' className='contact-icon' />
               <div className='details'>
-                <h4>Téléphone</h4>
+                <h4>{t('contact.phone')}</h4>
                 <p>(+509) 47116485 / 48803395 / 35651206</p>
               </div>
             </div>

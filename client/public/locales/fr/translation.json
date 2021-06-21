@@ -1,12 +1,22 @@
 {
   "home" : {
     "desc" : "Un développeur web à la recherche de l'opportunité d'apporter ses compétences et de les appliquer dans un environnement de travail qui l'encouragera à progresser et à acquérir de nouvelles connaissances, dans l'intention d'aider l'entreprise à atteindre ses objectifs.",
-    "button" : "Téléchager CV"
+    "button" : "Téléchager CV",
+    "title": "Accueil"
   },
   "navigation": {
     "1" : "Accueil",
     "2" : "Services",
     "3" : "Portfolio",
     "4" : "Contact"
+  },
+  "contact": {
+    "text" : "Ecrivez moi pour avoir plus d'informations sur les services que j'offre, pour prendre rendez-vous, ou tout simplement pour me dire bonjour 😉🙂🙋🏾",
+    "phone" : "Téléphone",
+    "address" : "Adresse",
+    "firstname" : "Prénom",
+    "lastname": "Nom",
+    "subject": "Subject",
+    "title" : "Contactez moi"
   }
 }

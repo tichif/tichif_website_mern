@@ -1,12 +1,22 @@
 {
   "home" : {
     "desc" : "A web developer looking for the opportunity to bring his skills and apply them in a work environment that will encourage him to progress and acquire new knowledge, with the intention of helping the company achieve its goals.",
-    "button" : "Download CV"
+    "button" : "Download CV",
+    "title": "Home"
   },
   "navigation": {
     "1" : "Home",
     "2" : "Services",
     "3" : "Portfolio",
     "4" : "Contact"
+  },
+  "contact": {
+    "text" : "Contact me to get more information about the services I offer, to make an appointment, or just to say hello😉🙂🙋🏾‍♂️",
+    "phone" : "Phone",
+    "address" : "Address",
+    "firstname" : "Firstname",
+    "lastname": "Lastname",
+    "subject": "Subject",
+    "title" : "Contact me"
   }
 }
