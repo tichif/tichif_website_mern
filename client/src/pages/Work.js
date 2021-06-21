@@ -8,7 +8,6 @@ import mariage1 from '../images/mariage.png';
 import mariage2 from '../images/mariage2.png';
 import emaily from '../images/emaily.png';
 import contactKeeper from '../images/contact-keeper.png';
-import githubFinder from '../images/github-finder.png';
 
 const Work = () => {
   const [t, i18n] = useTranslation();

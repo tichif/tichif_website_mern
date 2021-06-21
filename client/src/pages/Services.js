@@ -1,73 +1,58 @@
 import React, { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Services.css';
 import Meta from '../components/Meta';
 
 const Services = () => {
+  const [t, i18n] = useTranslation();
   return (
     <Fragment>
       <Meta title='Services' />
       <section>
         <div className='title'>
-          <h1>Les services que j'offre</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-            sint, quasi doloremque molestiae nemo ad, doloribus cupiditate natus
-            reiciendis perspiciatis facere debitis rerum distinctio voluptas?
-          </p>
+          <h1>{t('services.title')}</h1>
+          <p>{t('services.text')}</p>
         </div>
         <div className='services'>
           <div className='service'>
             <div className='icon'>
               <i className='fas fa-code'></i>
             </div>
-            <h2>Développement</h2>
-            <p>
-              Création de votre site ou application web en utilisant les
-              dernières technologies telles que React, Express, Docker,
-              Kubernetes.
-            </p>
+            <h2>{t('services.dev.title')}</h2>
+            <p>{t('services.dev.text')}</p>
           </div>
 
           <div className='service'>
             <div className='icon'>
               <i className='fas fa-server'></i>
             </div>
-            <h2>Hébergement</h2>
-            <p>
-              Déploiement de votre site ou application web grace aux plateformes
-              d'hébergement Digital Ocean, Heroku, Netlify.
-            </p>
+            <h2>{t('services.hosting.title')}</h2>
+            <p>{t('services.hosting.text')}</p>
           </div>
 
           <div className='service'>
             <div className='icon'>
               <i className='fas fa-chart-line'></i>
             </div>
-            <h2>SEO</h2>
-            <p>
-              Renforcement de votre présence sur le web grace aux méthodes de
-              référencement et d'optimisation.
-            </p>
+            <h2>{t('services.seo.title')}</h2>
+            <p>{t('services.seo.text')}</p>
           </div>
 
           <div className='service'>
             <div className='icon'>
               <i className='fas fa-file-signature'></i>
             </div>
-            <h2>Consultation</h2>
-            <p>
-              Etude d'opportunité pour la réalisation de site ou d'application
-              web.
-            </p>
+            <h2>{t('services.consultation.title')}</h2>
+            <p>{t('services.consultation.text')}</p>
           </div>
 
           <div className='service'>
             <div className='icon'>
               <i className='fas fa-book'></i>
             </div>
-            <h2>Formation</h2>
-            <p>Formation continue en ligne et en présentielle.</p>
+            <h2>{t('services.formation.title')}</h2>
+            <p>{t('services.formation.text')}</p>
           </div>
         </div>
       </section>

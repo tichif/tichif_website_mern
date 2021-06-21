@@ -144,8 +144,8 @@ const Contact = () => {
               <img src={email} alt='Email' className='contact-icon' />
               <div className='details'>
                 <h4>Email</h4>
-                <a href='mailto:contactme@tichif.dev'>
-                  contactme@tichif.dev
+                <a href='mailto:contactme@tichif.com'>
+                  contactme@tichif.com
                 </a>{' '}
                 <br />
                 <a href='mailto:charleshebertdalzon@gmail.com'>
