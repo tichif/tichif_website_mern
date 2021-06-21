@@ -24,6 +24,7 @@ const Navigation = () => {
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
+    clickHandler();
   };
 
   return (
