@@ -5,8 +5,22 @@ import './Home.css';
 import homeP from '../images/home.jpg';
 import Meta from '../components/Meta';
 
-const Home = () => {
+const Home = ({ history }) => {
   const [t, i18n] = useTranslation();
+
+  const clickHandler = () => {
+    const language = localStorage.getItem('i18nextLng')
+      ? localStorage.getItem('i18nextLng')
+      : 'en';
+
+    if (language === 'en') {
+      window.location.href =
+        'http://127.0.0.1:5000/api/v1/images/cv_english.jpg';
+    } else if (language === 'fr') {
+      window.location.href =
+        'http://127.0.0.1:5000/api/v1/images/cv_french.jpg';
+    }
+  };
   return (
     <Fragment>
       <Meta title={t('home.title')} />
@@ -16,7 +30,7 @@ const Home = () => {
           <h3>Dalzon Charles-Hébert</h3>
           <small>Fullstack web developer</small>
           <p>{t('home.desc')}</p>
-          <button className='btn'>
+          <button className='btn' onClick={clickHandler}>
             <i className='fas fa-download'></i> {t('home.button')}
           </button>
         </div>
