@@ -1,3 +1,5 @@
+const path = require('path');
+
 const express = require('express');
 require('dotenv').config();
 const hpp = require('hpp');
@@ -16,6 +18,7 @@ app.use(hpp());
 app.use(xss());
 
 app.use('/api/v1/contact', contactRoutes);
+app.use('/api/v1/images', express.static(path.join(__dirname, 'images')));
 
 app.use(errorHandler);
 
