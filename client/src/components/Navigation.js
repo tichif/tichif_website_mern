@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './Navigation.css';
 import github from '../images/github.png';
@@ -12,6 +13,7 @@ import { toggleNavigation } from '../actions/navigationAction';
 
 const Navigation = () => {
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
 
   const navigation = useSelector((state) => state.navigation);
   const { active } = navigation;
@@ -20,70 +22,84 @@ const Navigation = () => {
     dispatch(toggleNavigation(false));
   };
 
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
-    <div className={`navigation${active ? ' active' : ''}`}>
-      <ul>
-        <li>
-          <Link to='/' onClick={clickHandler}>
-            Accueil
-          </Link>
-        </li>
-        <li>
-          <Link to='/services' onClick={clickHandler}>
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link to='/works' onClick={clickHandler}>
-            Portfolio
-          </Link>
-        </li>
-        <li>
-          <Link to='/contact' onClick={clickHandler}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-      <div className='social-bar'>
+    <Suspense fallback='loading'>
+      <div className={`navigation${active ? ' active' : ''}`}>
         <ul>
           <li>
-            <a
-              href='https://github.com/tichif'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img src={github} alt='github' />
-            </a>
+            <Link to='/' onClick={clickHandler}>
+              {t('navigation.1')}
+            </Link>
           </li>
           <li>
-            <a
-              href='https://twitter.com/TichifJS'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img src={twitter} alt='twitter' />
-            </a>
+            <Link to='/services' onClick={clickHandler}>
+              {t('navigation.2')}
+            </Link>
           </li>
           <li>
-            <a
-              href='https://www.instagram.com/tichif.js'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img src={instagram} alt='instagram' />
-            </a>
+            <Link to='/works' onClick={clickHandler}>
+              {t('navigation.3')}
+            </Link>
+          </li>
+          <li>
+            <Link to='/contact' onClick={clickHandler}>
+              {t('navigation.4')}
+            </Link>
           </li>
         </ul>
-        <ul className='lang-icon'>
-          <li>
-            <img src={french} alt='french' />
-          </li>
-          <li>
-            <img src={usa} alt='french' />
-          </li>
-        </ul>
+        <div className='social-bar'>
+          <ul>
+            <li>
+              <a
+                href='https://github.com/tichif'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img src={github} alt='github' />
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://twitter.com/TichifJS'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img src={twitter} alt='twitter' />
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://www.instagram.com/tichif.js'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img src={instagram} alt='instagram' />
+              </a>
+            </li>
+          </ul>
+          <ul className='lang-icon'>
+            <li>
+              <img
+                src={french}
+                alt='french'
+                onClick={() => changeLanguage('fr')}
+              />
+            </li>
+            <li>
+              <img
+                src={usa}
+                alt='french'
+                onClick={() => changeLanguage('en')}
+              />
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 

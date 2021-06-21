@@ -1,0 +1,12 @@
+{
+  "home" : {
+    "desc" : "Un développeur web à la recherche de l'opportunité d'apporter ses compétences et de les appliquer dans un environnement de travail qui l'encouragera à progresser et à acquérir de nouvelles connaissances, dans l'intention d'aider l'entreprise à atteindre ses objectifs.",
+    "button" : "Téléchager CV"
+  },
+  "navigation": {
+    "1" : "Accueil",
+    "2" : "Services",
+    "3" : "Portfolio",
+    "4" : "Contact"
+  }
+}
