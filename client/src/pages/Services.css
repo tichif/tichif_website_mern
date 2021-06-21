@@ -11,13 +11,13 @@
 }
 
 .services .service .icon i {
-  font-size: 80px;
-  color: var(--secondary-color);
+  font-size: 65px;
+  color: #111;
 }
 
 .services .service h2 {
   font-weight: 500;
-  color: var(--secondary-color);
+  color: #111;
   font-size: 22px;
   margin-top: 20px;
 }
