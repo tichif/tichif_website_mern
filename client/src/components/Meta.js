@@ -15,7 +15,8 @@ const Meta = ({ title, description, keyword }) => {
 Meta.defaultProps = {
   title: 'Tichif',
   description: 'Mon portfolio en ligne',
-  keyword: 'Dalzon, Charles-hébert, Dalzon Charles-Hébert, Tichif, tichif.js',
+  keyword:
+    'Dalzon, Charles-Hébert, Dalzon Charles-Hébert, Tichif, tichif.js, Haiti',
 };
 
 export default Meta;
