@@ -116,6 +116,7 @@ const Contact = () => {
                   <div className='row'>
                     <div className='input100'>
                       <Alert type='error' message={error[0].msg} />
+                      <Alert type='error' message={error} />
                     </div>
                   </div>
                 )}

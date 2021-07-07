@@ -12,7 +12,7 @@ const sendMail = async (options) => {
 
   const message = {
     from: process.env.SMTP_USERNAME,
-    to: 'charleshebertdalzon@gmail.com',
+    to: 'contactme@tichif.com',
     subject: options.subject,
     html: options.message,
   };
