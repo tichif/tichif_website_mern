@@ -15,10 +15,12 @@ const Home = ({ history }) => {
 
     if (language === 'en') {
       window.location.href =
-        'http://127.0.0.1:5000/api/v1/images/cv_english.jpg';
+        // 'http://127.0.0.1:5000/api/v1/images/cv_english.jpg';
+        'http://www.tichif.com/api/v1/images/cv_english.jpg';
     } else if (language === 'fr') {
       window.location.href =
-        'http://127.0.0.1:5000/api/v1/images/cv_french.jpg';
+        // 'http://127.0.0.1:5000/api/v1/images/cv_french.jpg';
+        'http://www.tichif.com/api/v1/images/cv_french.jpg';
     }
   };
   return (
