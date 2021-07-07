@@ -10,7 +10,7 @@ import emaily from '../images/emaily.png';
 import contactKeeper from '../images/contact-keeper.png';
 
 const Work = () => {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
 
   const works = [
     {

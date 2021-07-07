@@ -5,7 +5,7 @@ import './Services.css';
 import Meta from '../components/Meta';
 
 const Services = () => {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
   return (
     <Fragment>
       <Meta title='Services' />

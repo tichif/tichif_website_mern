@@ -19,7 +19,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const contactState = useSelector((state) => state.contact);
   const { loading, success, error } = contactState;

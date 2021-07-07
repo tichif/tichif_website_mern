@@ -6,7 +6,7 @@ import homeP from '../images/home.jpg';
 import Meta from '../components/Meta';
 
 const Home = ({ history }) => {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
 
   const clickHandler = () => {
     const language = localStorage.getItem('i18nextLng')
