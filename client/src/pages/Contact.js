@@ -1,6 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ReactGA from 'react-ga';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './Contact.css';
@@ -13,12 +12,6 @@ import Alert from '../components/Alert';
 import { contact } from '../actions/contactAction';
 
 const Contact = () => {
-  useEffect(() => {
-    ReactGA.initialize('G-F24PLQ7GX6');
-
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [emailInput, setEmailInput] = useState('');

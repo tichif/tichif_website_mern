@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -8,6 +9,12 @@ import Contact from './pages/Contact';
 import Work from './pages/Work';
 
 const App = () => {
+  useEffect(() => {
+    ReactGA.initialize('G-F24PLQ7GX6');
+
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <Router>
       <Header />

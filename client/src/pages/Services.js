@@ -1,17 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
-import ReactGA from 'react-ga';
 
 import './Services.css';
 import Meta from '../components/Meta';
 
 const Services = () => {
-  useEffect(() => {
-    ReactGA.initialize('G-F24PLQ7GX6');
-
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
   const [t] = useTranslation();
   return (
     <Fragment>
