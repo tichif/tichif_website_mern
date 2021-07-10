@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactGA from 'react-ga';
 
 import './Work.css';
 import Meta from '../components/Meta';
@@ -39,6 +40,12 @@ const Work = () => {
       link: 'https://greve-choucroute-70628.herokuapp.com/',
     },
   ];
+
+  useEffect(() => {
+    ReactGA.initialize('G-F24PLQ7GX6');
+
+    ReactGA.pageview('/works');
+  }, []);
   return (
     <Fragment>
       <Meta title='Portfolio' />

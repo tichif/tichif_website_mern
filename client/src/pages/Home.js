@@ -1,11 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactGA from 'react-ga';
 
 import './Home.css';
 import homeP from '../images/home.jpg';
 import Meta from '../components/Meta';
 
 const Home = ({ history }) => {
+  useEffect(() => {
+    ReactGA.initialize('G-F24PLQ7GX6');
+
+    ReactGA.pageview('/');
+  }, []);
+
   const [t] = useTranslation();
 
   const clickHandler = () => {
