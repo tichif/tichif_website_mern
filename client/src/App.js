@@ -10,7 +10,7 @@ import Work from './pages/Work';
 
 const App = () => {
   useEffect(() => {
-    ReactGA.initialize('G-F24PLQ7GX6');
+    ReactGA.initialize('G-FEM7P7HRZG');
 
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
