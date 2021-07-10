@@ -13,6 +13,7 @@ const App = () => {
     ReactGA.initialize('UA-201842381-1');
 
     ReactGA.pageview(window.location.pathname + window.location.search);
+    console.log(window.location.pathname + window.location.search);
   }, []);
 
   return (
