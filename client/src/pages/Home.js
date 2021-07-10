@@ -10,7 +10,7 @@ const Home = ({ history }) => {
   useEffect(() => {
     ReactGA.initialize('G-F24PLQ7GX6');
 
-    ReactGA.pageview('/');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   const [t] = useTranslation();

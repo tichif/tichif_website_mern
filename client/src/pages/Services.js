@@ -9,7 +9,7 @@ const Services = () => {
   useEffect(() => {
     ReactGA.initialize('G-F24PLQ7GX6');
 
-    ReactGA.pageview('/services');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   const [t] = useTranslation();

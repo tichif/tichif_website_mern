@@ -44,7 +44,7 @@ const Work = () => {
   useEffect(() => {
     ReactGA.initialize('G-F24PLQ7GX6');
 
-    ReactGA.pageview('/works');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
     <Fragment>

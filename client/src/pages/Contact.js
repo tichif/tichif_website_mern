@@ -16,7 +16,7 @@ const Contact = () => {
   useEffect(() => {
     ReactGA.initialize('G-F24PLQ7GX6');
 
-    ReactGA.pageview('/contact');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   const [firstName, setFirstName] = useState('');
