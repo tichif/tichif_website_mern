@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './Home.css';
 import homeP from '../images/home.jpg';
 import Meta from '../components/Meta';
+import useGATracker from '../hooks/useGATracker';
 
 const Home = ({ history }) => {
   const [t] = useTranslation();
@@ -23,6 +24,8 @@ const Home = ({ history }) => {
         'http://www.tichif.com/api/v1/images/cv_french.jpg';
     }
   };
+
+  useGATracker();
   return (
     <Fragment>
       <Meta title={t('home.title')} />

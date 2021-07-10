@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import './Services.css';
 import Meta from '../components/Meta';
+import useGATracker from '../hooks/useGATracker';
 
 const Services = () => {
   const [t] = useTranslation();
+
+  useGATracker();
   return (
     <Fragment>
       <Meta title='Services' />

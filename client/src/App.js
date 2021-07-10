@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ReactGA from 'react-ga';
 
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -9,13 +8,6 @@ import Contact from './pages/Contact';
 import Work from './pages/Work';
 
 const App = () => {
-  useEffect(() => {
-    ReactGA.initialize('UA-201842381-1');
-
-    ReactGA.pageview(window.location.pathname + window.location.search);
-    console.log(window.location.pathname + window.location.search);
-  }, []);
-
   return (
     <Router>
       <Header />

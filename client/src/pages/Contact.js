@@ -10,6 +10,7 @@ import telephone from '../images/call.png';
 import Spinner from '../components/Spinner';
 import Alert from '../components/Alert';
 import { contact } from '../actions/contactAction';
+import useGATracker from '../hooks/useGATracker';
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('');
@@ -20,6 +21,8 @@ const Contact = () => {
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
+
+  useGATracker();
 
   const contactState = useSelector((state) => state.contact);
   const { loading, success, error } = contactState;

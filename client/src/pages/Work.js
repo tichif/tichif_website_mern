@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
+import useGATracker from '../hooks/useGATracker';
 
 import './Work.css';
 import Meta from '../components/Meta';
@@ -11,6 +12,8 @@ import contactKeeper from '../images/contact-keeper.png';
 
 const Work = () => {
   const [t] = useTranslation();
+
+  useGATracker();
 
   const works = [
     {
