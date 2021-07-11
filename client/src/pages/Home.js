@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactGA from 'react-ga';
 
 import './Home.css';
 import homeP from '../images/home.jpg';
@@ -8,6 +9,8 @@ import useGATracker from '../hooks/useGATracker';
 
 const Home = ({ history }) => {
   const [t] = useTranslation();
+
+  useGATracker();
 
   const clickHandler = () => {
     const language = localStorage.getItem('i18nextLng')
@@ -23,9 +26,13 @@ const Home = ({ history }) => {
         // 'http://127.0.0.1:5000/api/v1/images/cv_french.jpg';
         'http://www.tichif.com/api/v1/images/cv_french.jpg';
     }
+
+    ReactGA.event({
+      category: 'Button',
+      action: 'Download the CV',
+    });
   };
 
-  useGATracker();
   return (
     <Fragment>
       <Meta title={t('home.title')} />
