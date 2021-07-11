@@ -15,11 +15,21 @@
   color: #111;
 }
 
+.services .service:hover .icon i,
+.services .service:hover h2,
+.services .service:hover p {
+  color: #f15f24;
+}
+
 .services .service h2 {
   font-weight: 500;
   color: #111;
   font-size: 22px;
   margin-top: 20px;
+}
+
+.services .service:hover h2 {
+  color: #f15f24;
 }
 
 @media (max-width: 1068px) {
