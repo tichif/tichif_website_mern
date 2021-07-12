@@ -27,14 +27,14 @@
   },
   "services" : {
     "title" : "The services I offer",
-    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, sint, quasi doloremque molestiae nemo ad, doloribus cupiditate natus reiciendis perspiciatis facere debitis rerum distinctio voluptas?",
+    "text": "I offer several services in the field of web development. Create your website, increase your online presence or quickly become a developer with a lower price.",
     "dev": {
       "title" : "Development",
-      "text" : "Create your website or web application using the latest technologies such as React, Express, Docker, Kubernetes."
+      "text" : "Create your website or web application using the latest technologies such as React, Express, Docker, Kubernetes, Mongo DB."
     },
     "hosting": {
       "title" : "Hosting",
-      "text" : "Deploy  your website or web application thanks to Digital Ocean, Heroku, Netlify hosting platforms."
+      "text" : "Deploy  your website or web application on Digital Ocean, Heroku, Netlify hosting platforms."
     },
     "seo": {
       "title" : "SEO",
