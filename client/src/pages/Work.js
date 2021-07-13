@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
-import useGATracker from '../hooks/useGATracker';
+import ReactGA from 'react-ga';
 
 import './Work.css';
 import Meta from '../components/Meta';
@@ -9,6 +9,7 @@ import mariage1 from '../images/mariage.png';
 import mariage2 from '../images/mariage2.png';
 import emaily from '../images/emaily.png';
 import contactKeeper from '../images/contact-keeper.png';
+import useGATracker from '../hooks/useGATracker';
 
 const Work = () => {
   const [t] = useTranslation();
@@ -43,6 +44,13 @@ const Work = () => {
     },
   ];
 
+  const onClickHandler = (item) => {
+    ReactGA.event({
+      category: 'Button',
+      action: `Click on the ${item.name} project`,
+    });
+  };
+
   return (
     <Fragment>
       <Meta title='Portfolio' />
@@ -57,7 +65,12 @@ const Work = () => {
             <div className='item' key={i}>
               <img src={item.image} alt={item.name} />
               <div className='action'>
-                <a href={item.link} target='_blank' rel='noopener noreferrer'>
+                <a
+                  href={item.link}
+                  target='_blank'
+                  onClick={() => onClickHandler(item)}
+                  rel='noopener noreferrer'
+                >
                   {t('work.button')}
                 </a>
               </div>
