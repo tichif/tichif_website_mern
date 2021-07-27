@@ -4,9 +4,9 @@ import ReactGA from 'react-ga';
 
 import './Work.css';
 import Meta from '../components/Meta';
-import tkboutique from '../images/tkboutique.png';
-import mariage1 from '../images/mariage.png';
-import mariage2 from '../images/mariage2.png';
+import tkboutique from '../images/tkboutique.jpg';
+import mariage1 from '../images/mariage.jpg';
+import mariage2 from '../images/mariage2.jpg';
 import emaily from '../images/emaily.png';
 import contactKeeper from '../images/contact-keeper.png';
 import useGATracker from '../hooks/useGATracker';
