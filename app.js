@@ -5,6 +5,7 @@ require('dotenv').config();
 const hpp = require('hpp');
 const helmet = require('helmet');
 const xss = require('xss-clean');
+const compression = require('compression');
 
 const errorHandler = require('./middleware/error');
 const ErrorResponse = require('./utils/ErrorResponse');
@@ -13,6 +14,7 @@ const contactRoutes = require('./routes/contact');
 const app = express();
 
 app.use(express.json());
+app.use(compression());
 app.use(helmet());
 app.use(hpp());
 app.use(xss());
