@@ -7,6 +7,7 @@ import './Navigation.css';
 import github from '../images/github.png';
 import twitter from '../images/twitter.png';
 import instagram from '../images/instagram.png';
+import youtube from '../images/youtube.png';
 import french from '../images/french.png';
 import usa from '../images/usa.png';
 import { toggleNavigation } from '../actions/navigationAction';
@@ -79,6 +80,15 @@ const Navigation = () => {
                 rel='noopener noreferrer'
               >
                 <img src={instagram} alt='instagram' />
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://www.youtube.com/channel/UCjYdzbmiEptw8aVKpNVOqjA'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img src={youtube} alt='youtube' />
               </a>
             </li>
           </ul>
