@@ -1,6 +1,3 @@
-const { validationResult } = require('express-validator');
-
-const ErrorResponse = require('../utils/ErrorResponse');
 const sendMail = require('../utils/sendMail');
 const asyncHandler = require('../middleware/asyncHandler');
 
