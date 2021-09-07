@@ -6,6 +6,7 @@ I used severals technologies to built this website
 - React for the frontend
 - Node JS and Express for the backend
 - i18n for language translation
+- Redux for managing state in the frontend
 
 To install the dependencies for the backend:
 
