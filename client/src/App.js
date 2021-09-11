@@ -3,10 +3,24 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './pages/Home';
+import Spinner from './components/Spinner';
 
 const App = () => {
   return (
-    <Suspense fallback='loading'>
+    <Suspense
+      fallback={
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+          }}
+        >
+          <Spinner />
+        </div>
+      }
+    >
       <Router>
         <Header />
         <Switch>
