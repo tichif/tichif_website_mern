@@ -10,9 +10,7 @@ import './i18n';
 ReactDOM.render(
   <Suspense fallback='loading'>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </Provider>
   </Suspense>,
   document.getElementById('root')
