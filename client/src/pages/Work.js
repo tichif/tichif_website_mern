@@ -9,6 +9,7 @@ import mariage1 from '../images/mariage.jpg';
 import mariage2 from '../images/mariage2.jpg';
 import emaily from '../images/emaily.png';
 import contactKeeper from '../images/contact-keeper.png';
+import tandou from '../images/tandou.jpg';
 import useGATracker from '../hooks/useGATracker';
 
 const Work = () => {
@@ -31,6 +32,11 @@ const Work = () => {
       name: 'Mariage',
       image: mariage2,
       link: 'https://roosendjude.com/weeding/index.html',
+    },
+    {
+      name: 'Tandou Birthday',
+      image: tandou,
+      link: 'https://tandou.netlify.app/',
     },
     {
       name: 'Emaily',
