@@ -4,9 +4,10 @@ const language = localStorage.getItem('i18nextLng')
   ? localStorage.getItem('i18nextLng')
   : 'en';
 
-const contactSchema = yup.object.shape({
+const contactSchema = yup.object().shape({
   firstName: yup
     .string()
+    .trim()
     .required(
       language === 'en'
         ? 'Your first name is required.'
@@ -26,6 +27,7 @@ const contactSchema = yup.object.shape({
     ),
   lastName: yup
     .string()
+    .trim()
     .required(
       language === 'en'
         ? 'Your last name is required.'
@@ -45,6 +47,7 @@ const contactSchema = yup.object.shape({
     ),
   email: yup
     .string()
+    .trim()
     .email(
       language === 'en'
         ? 'Your email is incorrect.'
@@ -64,6 +67,7 @@ const contactSchema = yup.object.shape({
   subject: yup.string(),
   message: yup
     .string()
+    .trim()
     .required(
       language === 'en'
         ? 'Your Message is required.'

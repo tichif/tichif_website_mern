@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import './Contact.css';
 import Meta from '../components/Meta';
@@ -11,6 +12,8 @@ import Spinner from '../components/Spinner';
 import Alert from '../components/Alert';
 import { contact } from '../actions/contactAction';
 import useGATracker from '../hooks/useGATracker';
+import contactSchema from '../validations/yupContactValidation';
+import contactDefaultValue from '../validations/contactDefaultValue';
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('');
@@ -64,7 +67,7 @@ const Contact = () => {
             <Spinner />
           ) : (
             <div className='contact-form'>
-              <form onSubmit={submitHandler}>
+              {/* <form onSubmit={submitHandler}>
                 <div className='row'>
                   <div className='input50'>
                     <input
@@ -133,7 +136,69 @@ const Contact = () => {
                     </div>
                   </div>
                 )}
-              </form>
+              </form> */}
+              <Formik
+                initialValues={contactDefaultValue}
+                validationSchema={contactSchema}
+                onSubmit={(values,{ setSubmitting}) => {
+                  console.log(values)
+                  setSubmitting(false)
+                }}
+              >
+                {props => (
+                   <Form>
+                    <div className="row">
+                      <div className="input50">
+                        <Field type="text" name="firstName" placeholder={t('contact.firstname')} />
+                        <ErrorMessage name="firstName" component="div" className="error" />
+                      </div>
+                      <div className="input50">
+                        <Field type="text" name="lastName" placeholder={t('contact.lastname')} />
+                        <ErrorMessage name="lastName" component="div" className="error" />
+                      </div>
+                  </div>
+                  <div className="row">
+                    <div className="input50">
+                      <Field type="email" name="email" placeholder="Email" />
+                      <ErrorMessage name="email" component="div" className="error" />
+                    </div>
+                    <div className="input50">
+                      <Field type="text" name="subject" placeholder={t('contact.subject')} />
+                      <ErrorMessage name="subject" component="div" className="error" />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="input100">
+                      <Field name="message" component="textarea" placeholder="Message" />
+                      <ErrorMessage name="message" component="div" className="error" />
+                    </div>
+                  </div>
+                  <div className='row'>
+                  <div className='input100'>
+                    <button type='submit'>{t('contact.button')}</button>
+                  </div>
+                </div>
+                {error && (
+                  <div className='row'>
+                    <div className='input100'>
+                      <Alert type='error' message={error[0].msg} />
+                      <Alert type='error' message={error} />
+                    </div>
+                  </div>
+                )}
+                {success && (
+                  <div className='row'>
+                    <div className='input100'>
+                      <Alert
+                        type='success'
+                        message="Merci de m'avoir contacté !!!"
+                      />
+                    </div>
+                  </div>
+                )}
+                </Form>
+                )}
+              </Formik>
             </div>
           )}
           <div className='contact-info'>
