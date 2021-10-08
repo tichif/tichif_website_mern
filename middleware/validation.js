@@ -31,7 +31,7 @@ exports.validateContact = [
     .isEmpty()
     .withMessage('Tu dois mettre ton message.')
     .bail()
-    .isLength({ min: 5, max: 50 })
+    .isLength({ min: 5 })
     .withMessage('Ton message est incorrect.')
     .bail(),
   (req, res, next) => {
