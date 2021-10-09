@@ -24,6 +24,12 @@ const contactSchema = yup.object().shape({
       language === 'en'
         ? 'Your first name is incorrect.'
         : 'Ton prénom est incorrect.'
+    )
+    .matches(
+      /^[a-zA-ZÀ-ÿ-. ]*$/,
+      language === 'en'
+        ? 'Your first name is incorrect.'
+        : 'Ton prénom est incorrect.'
     ),
   lastName: yup
     .string()
@@ -41,6 +47,12 @@ const contactSchema = yup.object().shape({
     )
     .max(
       50,
+      language === 'en'
+        ? 'Your last name is incorrect.'
+        : 'Ton nom est incorrect.'
+    )
+    .matches(
+      /^[a-zA-ZÀ-ÿ-. ]*$/,
       language === 'en'
         ? 'Your last name is incorrect.'
         : 'Ton nom est incorrect.'
