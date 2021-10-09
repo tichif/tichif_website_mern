@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -16,11 +16,6 @@ import contactSchema from '../validations/yupContactValidation';
 import contactDefaultValue from '../validations/contactDefaultValue';
 
 const Contact = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [emailInput, setEmailInput] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -29,30 +24,6 @@ const Contact = () => {
 
   const contactState = useSelector((state) => state.contact);
   const { loading, success, error } = contactState;
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    if (
-      firstName !== '' ||
-      lastName !== '' ||
-      emailInput !== '' ||
-      message !== ''
-    ) {
-      dispatch(
-        contact({
-          name: `${firstName} ${lastName}`,
-          email: emailInput,
-          subject: subject || 'Un message de votre site',
-          message,
-        })
-      );
-      setFirstName('');
-      setLastName('');
-      setEmailInput('');
-      setSubject('');
-      setMessage('');
-    }
-  };
 
   return (
     <Fragment>
@@ -67,82 +38,20 @@ const Contact = () => {
             <Spinner />
           ) : (
             <div className='contact-form'>
-              {/* <form onSubmit={submitHandler}>
-                <div className='row'>
-                  <div className='input50'>
-                    <input
-                      type='text'
-                      placeholder={t('contact.firstname')}
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                    />
-                  </div>
-                  <div className='input50'>
-                    <input
-                      type='text'
-                      placeholder={t('contact.lastname')}
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='input50'>
-                    <input
-                      type='email'
-                      placeholder='Email'
-                      value={emailInput}
-                      onChange={(e) => setEmailInput(e.target.value)}
-                    />
-                  </div>
-                  <div className='input50'>
-                    <input
-                      type='text'
-                      placeholder={t('contact.subject')}
-                      value={subject}
-                      onChange={(e) => setSubject(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='input100'>
-                    <textarea
-                      placeholder='Message'
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='input100'>
-                    <button type='submit'>{t('contact.button')}</button>
-                  </div>
-                </div>
-                {error && (
-                  <div className='row'>
-                    <div className='input100'>
-                      <Alert type='error' message={error[0].msg} />
-                      <Alert type='error' message={error} />
-                    </div>
-                  </div>
-                )}
-                {success && (
-                  <div className='row'>
-                    <div className='input100'>
-                      <Alert
-                        type='success'
-                        message="Merci de m'avoir contacté !!!"
-                      />
-                    </div>
-                  </div>
-                )}
-              </form> */}
               <Formik
                 initialValues={contactDefaultValue}
                 validationSchema={contactSchema}
-                onSubmit={(values,{ setSubmitting}) => {
-                  console.log(values)
-                  setSubmitting(false)
+                onSubmit={(values,{ setSubmitting, resetForm }) => {
+                  setSubmitting(true);
+                  dispatch(
+                    contact({
+                      name: `${values.firstName} ${values.lastName}`,
+                      email: values.email,
+                      subject: values.subject || 'Un message de votre site',
+                      message: values.message,
+                    }))
+                    resetForm();
+                    setSubmitting(false);
                 }}
               >
                 {props => (
