@@ -5,9 +5,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import './Contact.css';
 import Meta from '../components/Meta';
-// import address from '../images/address.png';
-// import email from '../images/email.png';
-// import telephone from '../images/call.png';
 import Spinner from '../components/Spinner';
 import Alert from '../components/Alert';
 import { contact } from '../actions/contactAction';
@@ -22,7 +19,7 @@ const Contact = () => {
   useGATracker();
 
   const contactState = useSelector((state) => state.contact);
-  const { loading, success, error } = contactState;
+  const { loading, success, error, message } = contactState;
 
   return (
     <Fragment>
@@ -41,6 +38,9 @@ const Contact = () => {
                 initialValues={contactDefaultValue}
                 validationSchema={contactSchema}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
+                  const language = localStorage.getItem('i18nextLng')
+                    ? localStorage.getItem('i18nextLng')
+                    : 'en';
                   setSubmitting(true);
                   dispatch(
                     contact({
@@ -48,6 +48,7 @@ const Contact = () => {
                       email: values.email,
                       subject: values.subject || 'Un message de votre site',
                       message: values.message,
+                      language,
                     })
                   );
                   resetForm();
@@ -134,10 +135,7 @@ const Contact = () => {
                     {success && (
                       <div className='row'>
                         <div className='input100'>
-                          <Alert
-                            type='success'
-                            message="Merci de m'avoir contacté !!!"
-                          />
+                          <Alert type='success' message={message} />
                         </div>
                       </div>
                     )}

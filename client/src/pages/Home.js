@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import ReactGA from 'react-ga';
 
 import './Home.css';
-// import homeP from '../images/home.jpg';
 import Meta from '../components/Meta';
 import useGATracker from '../hooks/useGATracker';
 

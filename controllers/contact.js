@@ -4,6 +4,8 @@ const asyncHandler = require('../middleware/asyncHandler');
 exports.contact = asyncHandler(async (req, res, next) => {
   const { name, email, subject, message } = req.body;
 
+  const language = req.body.language || 'en';
+
   const options = {
     subject,
     message: `
@@ -22,6 +24,9 @@ exports.contact = asyncHandler(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    message: "Merci de m'avoir contacté.",
+    message:
+      language === 'en'
+        ? 'Your message has been sent.'
+        : 'Votre message a été envoyé.',
   });
 });

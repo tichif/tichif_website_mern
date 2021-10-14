@@ -4,12 +4,6 @@ import ReactGA from 'react-ga';
 
 import './Work.css';
 import Meta from '../components/Meta';
-// import tkboutique from '../images/tkboutique.jpg';
-// import mariage1 from '../images/mariage.jpg';
-// import mariage2 from '../images/mariage2.jpg';
-// import emaily from '../images/emaily.png';
-// import contactKeeper from '../images/contact-keeper.png';
-// import tandou from '../images/tandou.jpg';
 import useGATracker from '../hooks/useGATracker';
 
 const Work = () => {

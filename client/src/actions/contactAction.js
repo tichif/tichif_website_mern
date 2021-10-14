@@ -19,10 +19,11 @@ export const contact = (options) => async (dispatch) => {
       },
     };
 
-    await axios.post('/api/v1/contact', options, config);
+    const { data } = await axios.post('/api/v1/contact', options, config);
 
     dispatch({
       type: CONTACT_SUCCESS,
+      payload: data.message,
     });
   } catch (error) {
     dispatch({

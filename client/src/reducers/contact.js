@@ -14,6 +14,7 @@ export const contactReducer = (state = {}, action) => {
       return {
         loading: false,
         success: true,
+        message: action.payload,
       };
     case CONTACT_ERROR:
       return {
