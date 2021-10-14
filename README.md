@@ -9,6 +9,7 @@ I used severals technologies to built this website
 - Redux for managing state in the frontend
 - Yup for data validations
 - Formik for building forms
+- Sendgrid for sending emails
 
 To install the dependencies for the backend:
 
