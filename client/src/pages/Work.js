@@ -4,12 +4,12 @@ import ReactGA from 'react-ga';
 
 import './Work.css';
 import Meta from '../components/Meta';
-import tkboutique from '../images/tkboutique.jpg';
-import mariage1 from '../images/mariage.jpg';
-import mariage2 from '../images/mariage2.jpg';
-import emaily from '../images/emaily.png';
-import contactKeeper from '../images/contact-keeper.png';
-import tandou from '../images/tandou.jpg';
+// import tkboutique from '../images/tkboutique.jpg';
+// import mariage1 from '../images/mariage.jpg';
+// import mariage2 from '../images/mariage2.jpg';
+// import emaily from '../images/emaily.png';
+// import contactKeeper from '../images/contact-keeper.png';
+// import tandou from '../images/tandou.jpg';
 import useGATracker from '../hooks/useGATracker';
 
 const Work = () => {
@@ -20,32 +20,32 @@ const Work = () => {
   const works = [
     {
       name: 'TK Boutique',
-      image: tkboutique,
+      image: '/images/tkboutique.jpg',
       link: 'https://www.tkboutiquehaiti.com',
     },
     {
       name: 'Mariage',
-      image: mariage1,
+      image: '/images/mariage.jpg',
       link: 'https://roosendjude.com',
     },
     {
       name: 'Mariage',
-      image: mariage2,
+      image: '/images/mariage2.jpg',
       link: 'https://roosendjude.com/weeding/index.html',
     },
     {
       name: 'Tandou Birthday',
-      image: tandou,
+      image: '/images/tandou.jpg',
       link: 'https://tandou.netlify.app/',
     },
     {
       name: 'Emaily',
-      image: emaily,
+      image: '/images/emaily.png',
       link: 'https://nameless-springs-02522.herokuapp.com/',
     },
     {
       name: 'Contact Keeper',
-      image: contactKeeper,
+      image: '/images/contact-keeper.png',
       link: 'https://greve-choucroute-70628.herokuapp.com/',
     },
   ];

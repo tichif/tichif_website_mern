@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import ReactGA from 'react-ga';
 
 import './Home.css';
-import homeP from '../images/home.jpg';
+// import homeP from '../images/home.jpg';
 import Meta from '../components/Meta';
 import useGATracker from '../hooks/useGATracker';
 
@@ -37,7 +37,7 @@ const Home = ({ history }) => {
     <Fragment>
       <Meta title={t('home.title')} />
       <section className='home'>
-        <img src={homeP} alt='tichif' className='home-image' />
+        <img src='/images/home.jpg' alt='tichif' className='home-image' />
         <div className='home-content'>
           <h3>Dalzon Charles-Hébert</h3>
           <small>Fullstack web developer</small>

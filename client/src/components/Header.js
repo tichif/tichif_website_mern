@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Navigation from './Navigation';
-import logo from '../images/logo.png';
+// import logo from '../images/logo.png';
 import './Header.css';
 import { toggleNavigation } from '../actions/navigationAction';
 
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header>
       <div className='logo'>
-        <img src={logo} alt='logo' width='100px' />
+        <img src='/images/logo.png' alt='logo' width='100px' />
       </div>
       <div
         className={`toggle${active ? ' active' : ''}`}

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import './Navigation.css';
-import github from '../images/github.png';
-import twitter from '../images/twitter.png';
-import instagram from '../images/instagram.png';
-import youtube from '../images/youtube.png';
-import french from '../images/french.png';
-import usa from '../images/usa.png';
+// import github from '../images/github.png';
+// import twitter from '../images/twitter.png';
+// import instagram from '../images/instagram.png';
+// import youtube from '../images/youtube.png';
+// import french from '../images/french.png';
+// import usa from '../images/usa.png';
 import { toggleNavigation } from '../actions/navigationAction';
 
 const Navigation = () => {
@@ -61,7 +61,7 @@ const Navigation = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <img src={github} alt='github' />
+                <img src='/images/github.png' alt='github' />
               </a>
             </li>
             <li>
@@ -70,7 +70,7 @@ const Navigation = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <img src={twitter} alt='twitter' />
+                <img src='/images/twitter.png' alt='twitter' />
               </a>
             </li>
             <li>
@@ -79,7 +79,7 @@ const Navigation = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <img src={instagram} alt='instagram' />
+                <img src='/images/instagram.png' alt='instagram' />
               </a>
             </li>
             <li>
@@ -88,22 +88,22 @@ const Navigation = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <img src={youtube} alt='youtube' />
+                <img src='/images/youtube.png' alt='youtube' />
               </a>
             </li>
           </ul>
           <ul className='lang-icon'>
             <li>
               <img
-                src={french}
+                src='/images/french.png'
                 alt='french'
                 onClick={() => changeLanguage('fr')}
               />
             </li>
             <li>
               <img
-                src={usa}
-                alt='french'
+                src='/images/usa.png'
+                alt='usa'
                 onClick={() => changeLanguage('en')}
               />
             </li>
