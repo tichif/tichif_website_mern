@@ -1,9 +1,13 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './pages/Home';
 import Spinner from './components/Spinner';
+
+const Services = lazy(() => import('./pages/Services'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Work = lazy(() => import('./pages/Work'));
 
 const App = () => {
   return (
@@ -23,24 +27,12 @@ const App = () => {
     >
       <Router>
         <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route
-            exact
-            path='/services'
-            component={lazy(() => import('./pages/Services'))}
-          />
-          <Route
-            exact
-            path='/contact'
-            component={lazy(() => import('./pages/Contact'))}
-          />
-          <Route
-            exact
-            path='/works'
-            component={lazy(() => import('./pages/Work'))}
-          />
-        </Switch>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/works' element={<Work />} />
+        </Routes>
       </Router>
     </Suspense>
   );
