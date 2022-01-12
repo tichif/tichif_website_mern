@@ -15,7 +15,7 @@ const Header = () => {
   const { active } = navigation;
 
   const clickHandler = () => {
-    setToggled(!toggled);
+    setToggled((toggled) => !toggled);
     dispatch(toggleNavigation(!toggled));
   };
 
